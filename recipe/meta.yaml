@@ -12,7 +12,7 @@ source:
     - find-python.patch
 
 build:
-  number: 2
+  number: 3
 
 requirements:
   build:
@@ -27,8 +27,9 @@ requirements:
     - clingo >=5.5.1
     - gmp  # [unix]
   run:
-    - clingo >=5.5.1
     - python
+    # clingo breaks the API with minor version increments
+    - {{ pin_compatible('clingo', min_pin='x.x', max_pin='x.x') }}
     - cffi  # [python_impl == 'cpython']
     - gmp  # [unix]
 

@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/potassco/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 3f62d2818b8bade4883c52a84337d75359a1b32e732a00e09f947846ac7bfee9
+  sha256: f02e8e0c67edea47fc39d6d36ddd7338ef428bb4a4d73cf4c60862428046af50
 
 build:
   number: 0

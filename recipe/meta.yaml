@@ -1,5 +1,5 @@
 {% set name = "clingo-lpx" %}
-{% set version = "1.1.0" %}
+{% set version = "1.2.0" %}
 
 package:
   name: {{ name }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/potassco/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: cd638435d1fa199356d8a26ae4122ee297ef73eed1c3110e8de15334d3808f8f
+  sha256: 3f62d2818b8bade4883c52a84337d75359a1b32e732a00e09f947846ac7bfee9
   patches:
     - find-python.patch
 
 build:
-  number: 3
+  number: 0
 
 requirements:
   build:

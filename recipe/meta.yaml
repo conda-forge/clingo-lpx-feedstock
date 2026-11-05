@@ -1,5 +1,5 @@
 {% set name = "clingo-lpx" %}
-{% set version = "1.3.0" %}
+{% set version = "1.3.1" %}
 
 package:
   name: {{ name }}
@@ -7,10 +7,10 @@ package:
 
 source:
   - url: https://github.com/potassco/{{ name }}/archive/v{{ version }}.tar.gz
-    sha256: 2504196d2f64fc060f58707e26c1e115932d716cbc708648fac83d4c3eabe6f1
+    sha256: c282dfa1760ddc60c50e4642ef7aad98b3f11e691d2c465c485d94e0f7d05cb4
 
 build:
-  number: 3
+  number: 0
 
 requirements:
   build:
@@ -23,16 +23,14 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - python
-    - libpython
-    - clingo >=5.5.1
-    - gmp  # [unix]
+    - clingo >=5.8
+    - libflint
   run:
     - python
-    - libpython
     # clingo breaks the API with minor version increments
     - {{ pin_compatible('clingo', min_pin='x.x', max_pin='x.x') }}
     - cffi  # [python_impl == 'cpython']
-    - gmp  # [unix]
+    - libflint
 
 test:
   commands:
